@@ -2,19 +2,17 @@ package validator
 
 class CredentialValidator {
 
-    fun isEmptyEmailAddress(emailAddress: String): Boolean {
-        return emailAddress.trim { it <= ' ' }.isEmpty()
+    fun isEmptyUsername(username: String?): Boolean {
+        return username?.trim { it <= ' ' }?.isEmpty() ?: true
+    }
+
+    fun isEmptyEmailAddress(emailAddress: String?): Boolean {
+        return emailAddress?.trim { it <= ' ' }?.isEmpty() ?: true
     }
 
     fun isValidEmailAddress(emailAddress: String): Boolean {
-        val atSymbol = emailAddress.indexOf('@')
         val emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
-
-        if (atSymbol > 0 && atSymbol < emailAddress.length - 1 && emailAddress.matches(emailRegex.toRegex())) {
-            return true
-        }
-
-        return false
+        return emailAddress.matches(emailRegex.toRegex())
     }
 
     fun isValidPassword(password: String): Boolean {
@@ -35,9 +33,5 @@ class CredentialValidator {
         }
 
         return false
-    }
-
-    fun isValidRole(role: String): Boolean {
-        return role != "Select your role"
     }
 }
