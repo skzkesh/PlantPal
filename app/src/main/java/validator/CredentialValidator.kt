@@ -1,4 +1,4 @@
-package com.example.plantpal.validator
+package validator
 
 class CredentialValidator {
 
