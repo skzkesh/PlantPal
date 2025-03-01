@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PlantPal</string>
+    <string name="EMPTY_NAME">Empty name</string>
+    <string name="EMPTY_EMAIL_ADDRESS">Empty email address</string>
+    <string name="INVALID_EMAIL_ADDRESS">Invalid email address</string>
+    <string name="INVALID_PASSWORD">Invalid password</string>
 </resources>
